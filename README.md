@@ -1,11 +1,11 @@
-# dcape-app-template
+# dcape-app-dnsdist
 
 [![GitHub Release][1]][2] [![GitHub code size in bytes][3]]() [![GitHub license][4]][5]
 
-[1]: https://img.shields.io/github/release/dopos/dcape-app-template.svg
-[2]: https://github.com/dopos/dcape-app-template/releases
-[3]: https://img.shields.io/github/languages/code-size/dopos/dcape-app-template.svg
-[4]: https://img.shields.io/github/license/dopos/dcape-app-template.svg
+[1]: https://img.shields.io/github/release/dopos/dcape-app-dnsdist.svg
+[2]: https://github.com/dopos/dcape-app-dnsdist/releases
+[3]: https://img.shields.io/github/languages/code-size/dopos/dcape-app-dnsdist.svg
+[4]: https://img.shields.io/github/license/dopos/dcape-app-dnsdist.svg
 [5]: LICENSE
 
 [upstream_name](https://upstream_url) application package for [dcape](https://github.com/dopos/dcape).
@@ -13,7 +13,7 @@
 ## Upstream
 
 * Project: [upstream_name](https://upstream_url)
-* Docker: [template](https://hub.docker.com/r/template)
+* Docker: [dnsdist](https://hub.docker.com/r/dnsdist)
 
 ## Requirements
 
@@ -38,8 +38,8 @@
 
 Run commands on deploy host with [dcape](https://github.com/dopos/dcape) installed:
 ```bash
-git clone --single-branch --depth 1 https://github.com/dopos/dcape-app-template.git
-cd dcape-app-template
+git clone --single-branch --depth 1 https://github.com/dopos/dcape-app-dnsdist.git
+cd dcape-app-dnsdist
 make config-if
 ... <edit .env.sample>
 make up

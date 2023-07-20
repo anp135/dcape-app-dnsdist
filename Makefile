@@ -1,4 +1,4 @@
-## dcape-app-template Makefile
+## dcape-app-dnsdist Makefile
 ## This file extends Makefile.app from dcape
 #:
 
@@ -6,10 +6,10 @@ SHELL               = /bin/bash
 CFG                ?= .env
 
 #- App name
-APP_NAME           ?= service-template
+APP_NAME           ?= service-dnsdist
 
 #- Docker image name
-IMAGE              ?= ghcr.io/lekovr/service-template
+IMAGE              ?= ghcr.io/lekovr/service-dnsdist
 
 #- Docker image tag
 IMAGE_VER          ?= 0.1.0
@@ -46,6 +46,4 @@ endif
 
 # ------------------------------------------------------------------------------
 
-## Template support code, used once
-use-template:
 
