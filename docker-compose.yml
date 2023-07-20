@@ -4,6 +4,10 @@
 services:
   # This service will extend code from dcape
   app:
-    environment:
-      # Some var to keep YML struct
-      - DEBUG=yes
+    volumes:
+      - ./dnsdist.conf:/etc/dnsdist/dnsdist.conf
+    ports:
+      - ${LISTEN}:53/udp
+      - ${LISTEN}:53/tcp
+    labels:
+      - traefik.http.services.${APP_TAG}.loadbalancer.server.port=80

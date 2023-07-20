@@ -9,29 +9,26 @@ CFG                ?= .env
 APP_NAME           ?= service-dnsdist
 
 #- Docker image name
-IMAGE              ?= ghcr.io/lekovr/service-dnsdist
+IMAGE              ?= powerdns/dnsdist-18
 
 #- Docker image tag
-IMAGE_VER          ?= 0.1.0
-
-# If you need database, uncomment this var
-#USE_DB              = yes
-
-# If you need user name and password, uncomment this var
-#ADD_USER            = yes
-
+IMAGE_VER          ?= 1.8.0
 # ------------------------------------------------------------------------------
 
 -include $(CFG)
 export
 
 # This content will be added to .env
-# define CONFIG_CUSTOM
-# # ------------------------------------------------------------------------------
-# # Sample config for .env
-# #SOME_VAR=value
-#
-# endef
+define CONFIG_CUSTOM
+# ------------------------------------------------------------------------------
+# DNS Dist config for .env
+# Listen IP:PORT
+LISTEN=169.254.255.0:53
+
+# DNSDist console KEY from config for `make console`
+AUTH_KEY=
+
+endef
 
 # ------------------------------------------------------------------------------
 # Find and include DCAPE_ROOT/Makefile
@@ -46,4 +43,6 @@ endif
 
 # ------------------------------------------------------------------------------
 
-
+# Console access to dnsdist
+console: CMD=exec -ti app dnsdist -k "$(AUTH_KEY)" -c 127.0.0.1:52
+console: dc

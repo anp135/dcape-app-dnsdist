@@ -8,12 +8,12 @@
 [4]: https://img.shields.io/github/license/dopos/dcape-app-dnsdist.svg
 [5]: LICENSE
 
-[upstream_name](https://upstream_url) application package for [dcape](https://github.com/dopos/dcape).
+[PowerDNS/dnsdist](https://dnsdist.org/) application package for [dcape](https://github.com/dopos/dcape).
 
-## Upstream
+## PowerDNS/dnsdist
 
-* Project: [upstream_name](https://upstream_url)
-* Docker: [dnsdist](https://hub.docker.com/r/dnsdist)
+* Project: [PowerDNS dnstdist](https://dnsdist.org)
+* Docker: [dnsdist](https://hub.docker.com/r/powerdns/dnsdist-18)
 
 ## Requirements
 
@@ -42,11 +42,16 @@ git clone --single-branch --depth 1 https://github.com/dopos/dcape-app-dnsdist.g
 cd dcape-app-dnsdist
 make config-if
 ... <edit .env.sample>
+```
+Configure dnsdist.conf for yourself environment
+```
 make up
 ```
 
 ## License
 
 Copyright 2023 Aleksei Kovrizhkin <lekovr+dopos@gmail.com>
+
+Authors: Aleksei Kovrizhkin <lekovr+dopos@gmail.com>, Andrey Pazychev <anp135+dopos@gmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "[License](LICENSE)");
